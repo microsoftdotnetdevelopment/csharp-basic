@@ -1,0 +1,60 @@
+Implicitly Typed Local Variables 
+
+Local variables can be given an inferred "type" of var instead of an explicit type. The var keyword instructs the compiler to infer the type of the variable from the expression on the right side of the initialization statement. The inferred type may be a built-in type, an anonymous type, a user-defined type, or a type defined in the .NET Framework class library.
+
+Example :
+
+ 		    // i is compiled as an int
+                    var i = 5;
+
+                    // s is compiled as a string
+                    var s = "Hello";
+
+                    // a is compiled as int[]
+                    var a = new[] { 0, 1, 2 };
+
+                    // expr is compiled as IEnumerable<Customer>
+                    // or perhaps IQueryable<Customer>
+                    var expr =
+                        from c in customers
+                        where c.City == "London"
+                        select c;
+
+                    // anon is compiled as an anonymous type
+                    var anon = new { Name = "Terry", Age = 34 };
+
+                    // list is compiled as List<int>                             
+                    var list = new List<int>();
+
+
+
+It is important to understand that the var keyword does not mean "variant" and does not indicate that the variable is loosely typed, or late-bound. It just means that the compiler determines and assigns the most appropriate type.
+
+The var keyword may be used in the following contexts:
+
+1. On local variables (variables declared at method scope) as shown in the previous example.
+2. In a for initialization statement: for(var x = 1; x < 10; x++)  {}
+3. In a foreach initialization statement: foreach(var item in list){...}  
+4.In a using statement : using (var file = new StreamReader("C:\\myfile.txt")) {...}  
+
+
+The following restrictions apply to implicitly-typed variable declarations:
+
+  1.var can only be used when a local variable is declared and initialized in the same statement; the variable cannot be initialized to null, or to a method group or an anonymous function.
+
+  2. var cannot be used on fields at class scope.
+
+  3.  Variables declared by using var cannot be used in the initialization expression. In other words, this expression is legal: int i = (i = 20); but this expression produces a compile-time error: var i = (i = 20);
+
+  4.  Multiple implicitly-typed variables cannot be initialized in the same statement.
+
+  5. If a type named var is in scope, then the var keyword will resolve to that type name and will not be treated as part of an implicitly typed local variable declaration.
+
+
+Note : However, the use of var does have at least the potential to make your code more difficult to understand for other developers. For that reason, the C# documentation generally uses var only when it is required.
+
+
+
+
+
+

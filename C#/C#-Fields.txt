@@ -1,0 +1,102 @@
+Fields----------------------------------------------------------------
+
+1.A field is a variable of any type that is declared directly in a class or struct. Fields are members of their containing type.
+
+2.A class or struct may have instance fields or static fields or both. Instance fields are specific to an instance of a type. If you have a class T, with an instance field F, you can create two objects of type T, and modify the value of F in each object without affecting the value in the other object. By contrast, a static field belongs to the class itself, and is shared among all instances of that class. Changes made from instance A will be visibly immediately to instances B and C if they access the field.
+
+3.Generally, you should use fields only for variables that have private or protected accessibility. 
+
+4.Data that your class exposes to client code should be provided through methods, properties and indexers. 
+
+5.A private field that stores the data exposed by a public property is called a backing store or backing field.
+
+6.Fields typically store the data that must be accessible to more than one class method and must be stored for longer than the lifetime of any single method.
+
+7.Variables that are not used outside the scope of a single method should be declared as local variables within the method body itself.
+
+8.Fields are initialized immediately before the constructor for the object instance is called. If the constructor assigns the value of a field, it will overwrite any value given during field declaration.
+
+9.Fields can be marked as public, private, protected, internal, or protected internal. These access modifiers define how users of the class can access the fields
+
+10.A field can optionally be declared static. This makes the field available to callers at any time, even if no instance of the class exists
+
+11.A field can be declared readonly. A read-only field can only be assigned a value during initialization or in a constructor. A static readonly field is very similar to a constant, except that the C# compiler does not have access to the value of a static read-only field at compile time, only at run time.
+
+
+12.Fields are declared in the class block by specifying the access level of the field, followed by the type of the field, followed by the name of the field. For example:
+ public class CalendarEntry
+    {
+        // private field
+        private DateTime date;
+
+        // public field (Generally not recommended.)
+        public string day;
+
+        // Public property exposes date field safely.
+        public DateTime Date 
+        {
+            get 
+            {
+                return date;
+            }
+            set 
+            {
+                // Set some reasonable boundaries for likely birth dates.
+                if (value.Year > 1900 && value.Year <= DateTime.Today.Year)
+                {
+                    date = value;
+                }
+                else
+                    throw new ArgumentOutOfRangeException();
+            }
+
+        }
+
+        // Public method also exposes date field safely.
+        // Example call: birthday.SetDate("1975, 6, 30");
+        public void SetDate(string dateString)
+        {
+            DateTime dt = Convert.ToDateTime(dateString);
+
+            // Set some reasonable boundaries for likely birth dates.
+            if (dt.Year > 1900 && dt.Year <= DateTime.Today.Year)
+            {
+                date = dt;
+            }
+            else
+                throw new ArgumentOutOfRangeException();
+        }
+
+        public TimeSpan GetTimeSpan(string dateString)
+        {
+            DateTime dt = Convert.ToDateTime(dateString);
+
+            if (dt != null && dt.Ticks < date.Ticks)
+            {
+                return date - dt;
+            }
+            else
+                throw new ArgumentOutOfRangeException();  
+ 
+        }
+    }
+
+
+13.To access a field in an object, add a period after the object name, followed by the name of the field, as in objectname.fieldname. For example:
+
+ CalendarEntry birthday = new CalendarEntry();
+            birthday.day = "Saturday";
+
+
+
+14.A field can be given an initial value by using the assignment operator when the field is declared. To automatically assign the day field to "Monday", for example, you would declare day as in the following example:
+
+C#
+
+    public class CalendarDateWithInitialization
+    {
+        public string day = "Monday";
+        //...
+    }
+
+15.Fields are initialized immediately before the constructor for the object instance is called. If the constructor assigns the value of a field, it will overwrite any value given during field declaration. 

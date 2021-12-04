@@ -1,0 +1,74 @@
+ 			  			Task 1.5
+
+1.Accept the number from user and display the below given pattern . For E.G user has given number 5 .
+
+Pattere A :
+
+		* * * * *
+		* * * *
+		* * *
+		* *
+		*
+
+
+
+Pattern B :
+		*
+		* *
+		* * *
+		* * * *
+		* * * * *
+
+Pattern C :	
+		*
+	      *   *
+	    *       *
+	  *           *
+        *               *
+
+Patter D :
+
+		1
+		1 2
+		1 2 3
+		1 2 3 4
+		1 2 3 4 5
+
+Pattern E :
+
+		1 2 3 4 5 
+		1 2 3 4
+		1 2 3 
+		1 2
+		1
+
+
+Patter F :
+		1
+		1 1
+		1 1 1
+		1 1 1 1
+		1 1 1 1 1
+
+Pattern G:
+		a
+		B C
+		d e f
+		G H I J
+		k l m n o
+
+
+		
+	
+2. Accept the no of lines and the choice of displaying the lines e.g. horizontal or vertical . For E.G user has given no of lines 5 and chosen horizontal then display 5 horizontal lines as below :
+
+---------------------
+---------------------
+---------------------
+---------------------
+---------------------
+
+similarly do for vertical .
+
+
+ 

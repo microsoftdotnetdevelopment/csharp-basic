@@ -1,0 +1,67 @@
+					Task 1.6
+
+1. Store the colors in the array with names like "Red","Blue","Green","Orange","Black" and display in the below pattern by using loops:
+
+	-----------------------------------------------------------------------------------------
+	|											|
+	|			Red	:	1						|
+	|			Blue	:	2						|
+	|			Green	:	3						|
+	|			Orange	:	4						|
+	|			Balck	:	5						|
+	|											|
+	-----------------------------------------------------------------------------------------
+	
+2. Display the below format by using loop :
+
+	-----------------------------------------------------------------------------------------
+	|											|
+	|			a	:	5						|
+	|			b	:	4						|
+	|			c	:	3						|
+	|			d	:	2						|
+	|			e	:	1						|
+	|											|
+	-----------------------------------------------------------------------------------------
+
+3.Accept 10 values from user and calculate the :
+	A.Maximum
+	B.Minimum
+	C.Sum
+	D.Average
+
+By using Loop without using array.
+
+4.Accept the name of 10 fruits and display the random fruit everytime user runs the program.
+
+5.Find the factorial of a number by using array.
+
+6.Check for the palindrome of the word taken by user.
+
+7.Initialize 4 array with 4 values as give below :
+
+	Array name : "hairs " with values "balck","brown",white","yellow"
+	Array name : "eyes" with values "black","brown","white","gray"
+	Array name : "nose" with values "small","large","medium","bent"
+	Array name : "title" with values "cat","elephant","cow","dog"
+
+Ask the user to choose the options provided by you one by one like below :
+
+	Please provide the Color of your hair , please choose from below options :
+			A. BLACK
+			B. BROWN
+			C. WHITE
+			D. YELLOW
+
+	Answer :  user will choose option and give answer either A,B,C or D here.
+
+	Similarly ask other values from rest two array name "eyes" and "nose".
+
+	After accepting all the options , display the random name from title array in the below given format :
+
+	Hi As per your options provided ,You personality matches with ELEPHANT !!!!
+
+
+
+
+			

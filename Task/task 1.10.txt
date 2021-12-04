@@ -1,0 +1,7 @@
+Accept 10 values in array , and perform the below activities
+	A. Find the unique numbers from array.
+	B. Count the numbers coming more than once.
+	C. Sort the array in ascending order with unique values.
+	D. Sort the array in descending order with unique values.
+	E. Count the existing prime numbers.
+	F. Display all numbers coming more than once.

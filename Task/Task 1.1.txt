@@ -1,0 +1,37 @@
+ 					        Task 1.1
+
+1.Explain the difference between .NET Platform,.NET Framework and C# language .
+2.Explain the role of compilers ?
+3.Explain the role of CLR and it's components ?
+4.What do you know by namespaces , explain with examples. 
+5.Write the program to display the below output :
+
+-------------------------------------SynapseIndia Company------------------------------
+			Total Employee	:550
+			.NET Employee	:100
+			PHP Employee	:150
+			Address		:NSEZ
+-----------------------------------For more info visit us on www.synapse.com----------- 
+
+6.What is the difference between value type and reference type, explain with examples?
+7.Explain the difference between variable and constants?
+8.Explain the type of comments available in C#?
+9.Expain the System namespace with examples?
+10.Write the code to display your time table like in the below format :
+ 
+--------------------------------------------------TIME TABLE------------------------------------------------------
+|	Time		Activity
+|	7AM		Getting UP
+|	8AM		Breakfast
+|	--		--------
+|	--		--------
+|	--		--------
+|
+|
+|
+|
+|
+|
+------------------------------------------------------------------------------------------------------------------
+
+

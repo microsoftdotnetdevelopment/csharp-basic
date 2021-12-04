@@ -1,0 +1,2 @@
+string n = ”    sunny df”;
+Console.WriteLine(n.TrimStart());

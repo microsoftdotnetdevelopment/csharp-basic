@@ -1,0 +1,8 @@
+The foreach loop in C# executes a block of code on each element in an array or a collection of items. 
+When executing foreach loop it traversing items in a collection or an array . 
+The foreach loop is useful for traversing each items in an array or a collection of items and displayed one by one.
+            string s = "9quali52ty3";
+            foreach (char c in s)
+            {
+                Console.WriteLine((int)c);
+            }

@@ -1,0 +1,127 @@
+
+Task1.2 q1-
+int num = Convert.ToInt32(Console.ReadLine());
+            int in_metre = num * 1000;
+            Console.WriteLine(in_metre);
+or
+
+ String a=Console.ReadLine();
+            int num = int.Parse(a);
+            int in_meter = num * 1000;
+            Console.WriteLine(in_meter);
+
+Task1.2 q2
+
+ String a=Console.ReadLine();
+            float num = float.Parse(a);
+            float mps = (num * 5)/18;
+            Console.WriteLine(mps);
+
+task1.2 q3
+
+ String a=Console.ReadLine();
+            float c = float.Parse(a);
+            float f = ((9 * c) / 5) + 32;
+            Console.WriteLine(f);
+
+task1.2 q4
+
+ String a = Console.ReadLine();
+            String b = Console.ReadLine();
+            int l = int.Parse(a);
+            int w = int.Parse(b);
+            int area = l * w;
+            int para = 2*(l + w);
+            Console.WriteLine("area is "+area);
+            Console.WriteLine("PArameter is " + para);  
+
+task1.2 q5
+
+ String a = Console.ReadLine();
+            String b = Console.ReadLine();
+            String c = Console.ReadLine();
+            int d = int.Parse(a);
+            int e = int.Parse(b);
+            int f = int.Parse(c);
+            int sum = d + e+f;
+            int sub = d - e - f;
+            int mul = d * e * f;
+            int div = d / e;
+            Console.WriteLine(sum);
+            Console.WriteLine(sub);
+            Console.WriteLine(mul);
+            Console.WriteLine(div);
+
+Task1.2 q6
+
+ string str = Console.ReadLine();
+            for (int i = 0; i < str.Length; i++)
+                Console.Write(((int)str[i]).ToString());
+
+or
+
+char ch = char.Parse(Console.ReadLine());
+
+            int i = (int)ch;
+            Console.WriteLine(i);
+            Console.ReadKey();  //to hold window
+task1.2 q7
+ int wer = int.Parse(Console.ReadLine());
+            char n = (char)wer;
+            Console.WriteLine(n);
+            Console.ReadKey();
+
+
+task1.2 q8
+
+
+ const int Allowances = 4000;
+            const int Meal = 5;
+            String a = Console.ReadLine();
+            String b = Console.ReadLine();
+            String c = Console.ReadLine();
+            String d = Console.ReadLine();
+            String e = Console.ReadLine();
+            String f = Console.ReadLine();
+            
+            
+            
+            int basic_salary = int.Parse(f);
+           int ta=(5*basic_salary)/100;
+           int total_salary=basic_salary+Allowances-ta;
+           Console.WriteLine("---------------------------------------------- - Employee Details------------------------------------------------");
+            Console.WriteLine("|            Employee ID : " + a);
+            Console.WriteLine("|            Employee Name : " + b);
+            Console.WriteLine("|            Employee City : " + c);
+            Console.WriteLine("|            Employee Gender: " + d);
+            Console.WriteLine("|            Employee Mobile : " + e);
+            Console.WriteLine("|            Employee Basic Salary : " + basic_salary);
+            Console.WriteLine("|            Employee Allowances  : " + Allowances);
+            Console.WriteLine("|            Employee Meal Deduction : " + Meal);
+            Console.WriteLine("|            Employee Total Salary : " + total_salary);
+            Console.WriteLine("----------------------------------------------------------------------------------------------------------------");
+
+
+task1.2 q9
+
+String a = Console.ReadLine();
+            String b = Console.ReadLine();
+            String c = Console.ReadLine();
+            int p = int.Parse(a);
+            int i = int.Parse(b);
+            int t = int.Parse(c);
+            float simple = (p * i * t) / 100;
+            Console.WriteLine(simple);
+
+task1.2 q10
+
+  String a = Console.ReadLine();
+            String b = Console.ReadLine();
+            double c = double.Parse(a);
+            double d = double.Parse(b);
+            double  e= c * c;
+            double f = d * d;
+            double  g = e + f;
+            double third = Math.Sqrt(g);
+            Console.WriteLine(third);
+to use sqrt function you need to take double datatype;     

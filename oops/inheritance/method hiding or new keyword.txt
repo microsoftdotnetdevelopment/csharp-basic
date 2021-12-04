@@ -1,0 +1,41 @@
+The "override" modifier extends the base class method, and the "new" modifier hides it.
+The "virtual" keyword modifies a method, property, indexer, or event declared in the base class and allows it to be overridden in the derived class.
+The "override" keyword extends or modifies a virtual/abstract method, property, indexer, or event of the base class into the derived class.
+The "new" keyword is used to hide a method, property, indexer, or event of the base class into the derived class.
+If a method is not overriding the derived method then it is hiding it. A hiding method must be declared using the new keyword
+
+In base class method is declared as virtual
+In derived class we override the same method.
+The virtual keyword indicates that method can be overridden in any derived class.
+
+using System;
+class Car
+{
+public void drive()
+    {
+Console.WriteLine("Base Class : Drive Method");
+}
+}
+
+class MyCar : Car
+{
+    public new void drive() // Using new keyword here
+    {
+        Console.WriteLine("Derived Class : Drive Method");
+    }
+}
+
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        Car o1 = new Car();
+        o1.drive(); // Output - Base Class : Drive Method
+
+        MyCar o2 = new MyCar();
+        o2.drive(); // Output - Derived Class : Drive Method
+
+        Console.ReadKey();
+    }
+}

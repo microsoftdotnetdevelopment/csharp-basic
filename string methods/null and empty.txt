@@ -1,0 +1,47 @@
+A C# string is an array of characters declared using the string keyword. 
+String objects are immutable, meaning that they cannot be changed once they have been created.
+
+What is C# null ?
+The null keyword is a special case for a variable value. The implementation of C# on the CLR represents a null reference by zero bits. 
+When defining a string in a class, dont initialize it to null. Instead, initialize it to the constant string.Empty.
+A null string does not refer to an instance of a System.String object and any attempt to call a method on a null string results in a NullReferenceException.
+Ex:-
+ string str = null; 
+ int len  = str.Length;
+When run the above code it will throw NullReferenceException.
+
+What is Empty Strings ?
+An empty string is an instance of a System.String object that contains zero characters. 
+You can call methods on empty strings because they are valid System.String objects.
+  
+How to check null String in c#?
+You may use the null keyword to check or assign the value of an object.
+ string str =null ; 
+ if (str == null)  { 
+Console.WriteLine("String is null");
+  }
+In the above code we created a string Object and assigned null and next we check the string is null or not.
+
+IsNullOrEmpty method
+IsNullOrEmpty is a convenience method that enables you to simultaneously test whether a String is null or its value is Empty.
+  string str =null;
+  if (string.IsNullOrEmpty(str))  {
+ Console.WriteLine("String is empty or null");
+  }
+
+
+NullReferenceException
+NullReferenceException indicates that you are trying to access member fields, or function types, on an object reference that points to null.
+That means the reference to an Object which is not initialized.
+
+string str =null;
+if (str == null) { 
+Console.WriteLine("String is null"); } 
+else { 
+Console.WriteLine("String is not null"); }
+str = "test";
+if (string.IsNullOrEmpty(str)) { 
+Console.WriteLine("String is empty or null"); } 
+else { 
+Console.WriteLine("String is not empty or null"); }
+}

@@ -1,0 +1,149 @@
+Classes---------------------------------------------------------
+
+1. A class is like a blueprint. It defines the data and behavior of a type. 
+2. A class is a construct that enables you to create your own custom types by grouping together variables of other types, methods and events.
+3. If the class is not declared as static, client code can use it by creating objects or instances which are assigned to a variable.  The variable remains in memory until all references to it go out of scope.At that time, the CLR marks it as eligible for garbage collection.
+4. If the class is declared as static, then only one copy exists in memory and client code can only access it through the class itself, not an instance variable. 
+5. Although they are sometimes used interchangeably, a class and an object are different things. A class defines a type of object, but it is not an object itself. An object is a concrete entity based on a class, and is sometimes referred to as an instance of a class. Objects can be created by using the new keyword followed by the name of the class that the object will be based on.
+6.Only single inheritance is allowed in C#. In other words, a class can inherit implementation from one base class only. However, a class can implement more than one interface. 
+7.Classes that you declare directly within a namespace, not nested within other classes, can be either public or internal. Classes are internal by default.
+
+-------------------------------------------------------------Objects -------------------------
+
+1.An object is basically a block of memory that has been allocated and configured according to the blueprint of class.
+2.A program may create many objects of the same class. 
+3.Objects are also called instances, and they can be stored in either a named variable or in an array or collection. 
+4.In an object-oriented language such as C#, a typical program consists of multiple objects interacting dynamically.
+5.Because classes are reference types, a variable of a class object holds a reference to the address of the object on the managed heap. If a second object of the same type is assigned to the first object, then both variables refer to the object at that address. 
+6.Instances of classes are created by using the new operator.
+7.Because structs are value types, a variable of a struct object holds a copy of the entire object. Instances of structs can also be created by using the new operator, but this is not required
+8.It is not possible to deterministically destroy a class object like you can in C++.
+9.When you compare two objects for equality, you must first distinguish whether you want to know whether the two variables represent the same object in memory, or whether the values of one or more of their fields are equivalent. If you are intending to compare values, you must consider whether the objects are instances of value types (structs) or reference types (classes, delegates, arrays).
+10.To determine whether two class instances refer to the same location in memory (which means that they have the same identity), use the static Equals method. (System.Object is the implicit base class for all value types and reference types, including user-defined structs and classes.)
+11.To determine whether the instance fields in two struct instances have the same values, use the ValueType.Equals method. Because all structs implicitly inherit from System.ValueType, you call the method directly on your object 
+
+--------------------------------------Example for Classes vs Struct-----------------------
+
+public class Person
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+            public Person(string name, int age)
+            {
+                Name = name;
+                Age = age;
+            }
+            //Other properties, methods, events...
+        }
+
+        class Program
+        {
+            static void Main()
+            {
+                Person person1 = new Person("Leopold", 6);
+                Console.WriteLine("person1 Name = {0} Age = {1}", person1.Name, person1.Age);
+
+                // Declare  new person, assign person1 to it.
+                Person person2 = person1;
+
+                //Change the name of person2, and person1 also changes.
+                person2.Name = "Molly";
+                person2.Age = 16;
+
+                Console.WriteLine("person2 Name = {0} Age = {1}", person2.Name, person2.Age);
+                Console.WriteLine("person1 Name = {0} Age = {1}", person1.Name, person1.Age);
+
+                // Keep the console open in debug mode.
+                Console.WriteLine("Press any key to exit.");
+                Console.ReadKey();
+
+            }
+        }
+        /*
+            Output:
+            person1 Name = Leopold Age = 6
+            person2 Name = Molly Age = 16
+            person1 Name = Molly Age = 16
+        */
+
+
+---------------------------------
+
+public struct Person
+        {
+            public string Name;
+            public int Age;
+            public Person(string name, int age)
+            {
+                Name = name;
+                Age = age;
+            }
+        }
+
+        public class Application
+        {
+            static void Main()
+            {
+                // Create  struct instance and initialize by using "new".
+                // Memory is allocated on thread stack.
+                Person p1 = new Person("Alex", 9);
+                Console.WriteLine("p1 Name = {0} Age = {1}", p1.Name, p1.Age);
+
+                // Create  new struct object. Note that  struct can be initialized
+                // without using "new".
+                Person p2 = p1;
+
+                // Assign values to p2 members.
+                p2.Name = "Spencer";
+                p2.Age = 7;
+                Console.WriteLine("p2 Name = {0} Age = {1}", p2.Name, p2.Age);
+
+                // p1 values remain unchanged because p2 is  copy.
+                Console.WriteLine("p1 Name = {0} Age = {1}", p1.Name, p1.Age);
+
+                // Keep the console open in debug mode.
+                Console.WriteLine("Press any key to exit.");
+                Console.ReadKey();
+            }
+        }
+        /*
+          Output:
+            p1 Name = Alex Age = 9
+            p2 Name = Spencer Age = 7
+            p1 Name = Alex Age = 9
+        */
+
+------------------------------------Comparing the objects of class vs struct
+
+  // Person is defined in the previous example.
+
+            //public struct Person
+            //{
+            //    public string Name;
+            //    public int Age;
+            //    public Person(string name, int age)
+            //    {
+            //        Name = name;
+            //        Age = age;
+            //    }
+            //}
+
+            Person p1 = new Person("Wallace", 75);
+            Person p2;
+            p2.Name = "Wallace";
+            p2.Age = 75;
+
+            if (p2.Equals(p1))
+                Console.WriteLine("p2 and p1 have the same values.");
+
+            // Output: p2 and p1 have the same values.
+
+------------------------------------------------------------------------------------
+
+Note :
+
+1. The System.ValueType implementation of Equals uses reflection because it must be able to determine what the fields are in any struct. When creating your own structs, override the Equals method to provide an efficient equality algorithm that is specific to your type.
+
+2.To determine whether the values of the fields in two class instances are equal, you might be able to use the Equals method or the == operator. However, only use them if the class has overridden or overloaded them to provide a custom definition of what "equality" means for objects of that type. The class might also implement the IEquatable<T> interface or the IEqualityComparer<T> interface. Both interfaces provide methods that can be used to test value equality.
+
+3.The allocation and deallocation of memory on the managed heap is highly optimized in the common language runtime. In most cases there is no significant difference in the performance cost of allocating a class instance on the heap versus allocating a struct instance on the stack.

@@ -1,0 +1,64 @@
+task1.1 q1
+
+.net framework--
+you build code using .net framework
+it runs only on windows operating system
+it is not open source
+it has various languages in it.
+libraries written in programming lang. to reduce your work in implementing already implemented
+it is a complete envirnment that allow developers to develop,run and deploy the application.
+
+.net platform--
+the code runs on .net platform.
+it is used to create apps,websites and services on any device and os
+
+c#
+object oriented programming language developed by microsoft
+
+q2
+
+a compiler is a computer program that transforms source code into another language(object code)
+
+q3
+
+clr provides runtime environment in .net
+
+q4-
+a namespace is a coontainer which contains classes,structures,interfaces,enumerations etc.eg.system.io groups i/p o/p related features 
+and it allows code to create a system to organize your code.
+e.g-
+using System;
+namespace MyNameSpace
+{
+namespace Video{
+class MyVideo{
+public static void play(){
+}}}
+namespace Audio{
+same as video
+
+}}
+
+q5-
+reference type
+stores in heap
+contains pointer to another memory allocatione.
+e.g are classes,object,arrays,indexers,interfaces.
+int[] iArray=new int[20];
+
+
+value type
+stored in stack
+holds data within its own memory allocation
+e.g int x=10;
+
+
+q8-
+3 types of comment in c#
+single line //
+multiline /* .. */
+xmlcomments ///
+
+q9--
+ system namespace contains fundamental classes and base classes that define commonly used value and reference data types,events and events handlers,interfaces
+,attributes and processing exceptions.

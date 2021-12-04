@@ -1,0 +1,265 @@
+task1.4 q1
+  int[] a = new int[3];
+           for(int i = 0; i < 3; i++)
+            {
+                a[i] = int.Parse(Console.ReadLine());
+            }
+           int max = a[0];
+            for (int i = 0; i < 3; i++)
+            {
+                if (a[i] > max)
+                {
+                    max = a[i];
+                }
+               
+            }
+            Console.WriteLine("max no. " + max);
+
+task1.4 q2
+ char[] sentence = new char[100];
+
+            int i, vowels = 0,  n;
+            Console.WriteLine("Enter the Length of the sentence  \n");
+            n = int.Parse(Console.ReadLine());
+            for (i = 0; i < n; i++)
+            {
+                sentence[i] = Convert.ToChar(Console.Read());
+            }
+            for (i = 0; sentence[i] != '\0'; i++)
+            {
+                if ((sentence[i] == 'a' || sentence[i] == 'e' || sentence[i] ==
+                'i' || sentence[i] == 'o' || sentence[i] == 'u') ||
+                (sentence[i] == 'A' || sentence[i] == 'E' || sentence[i] ==
+                'I' || sentence[i] == 'O' || sentence[i] == 'U'))
+                {
+                    vowels = vowels + 1;
+                }
+            }
+                Console.WriteLine(vowels);
+
+or
+
+int i,v=0;
+            string n = Console.ReadLine();
+            for(i=0;i<n.Length;i++)
+          if(n[i]=='a' || n[i]=='e' || n[i]=='i' || n[i]=='o' || n[i] == 'u')
+                {
+                    v = v + 1;
+            }
+            Console.WriteLine(v);
+              }
+task1.4 q3
+
+ int i,c=0;
+            string n = Console.ReadLine();
+            for (i = 0; i < n.Length; i++)
+            {
+                c = c + 1;
+            }
+            Console.WriteLine(c);
+        }
+
+task1.4 q4
+
+int i=0,f=0;
+            string n = Console.ReadLine();
+            for (i = 0; i < n.Length; i++)
+            {
+                if(n[i]=='@' || n[i] == '.')
+                {
+                    f = f + 1;
+                }
+
+            }
+            if (f == 2)
+            {
+                Console.WriteLine("correct");
+            }
+            else
+            {
+                Console.WriteLine("incorrect");
+            }
+
+task1.4 q5
+
+
+            int i;
+            string n = Console.ReadLine();
+            string revs="";
+            
+            for (i = n.Length-1; i >= 0; i--)
+            {
+                revs = revs + n[i];
+            }
+            if (revs == n)
+            {
+                Console.WriteLine("palid");
+
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+
+
+task1.4 q6
+int n, i, p = 1,j;
+            n = int.Parse(Console.ReadLine());
+            for (i = 2; i < n; i++)
+            {
+                for (j = 2; j < i / 2; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        p = 0;
+                        break;
+                    }
+                }
+                    if (p == 1)
+                    {
+                        Console.WriteLine(i);
+                    }
+
+task1.4 q7
+
+ bool lucky1 = false, lucky2 = false;
+            int i, cnt = 0;
+            string n = Console.ReadLine();
+            for (i = 0; i < n.Length; i++)
+            {
+                if (n.Length > 5 && n.Length < 10)
+                {
+                    if (n[0] == 's' || n[0] == 'a' || n[0] == 'h')
+                    {
+                        lucky1 = true;
+                    }
+                    if (n[i] == 'a' || n[i] == 'e' || n[i] == 'o' || n[i] == 'u' || n[i] == 'i')
+                    {
+                        cnt++;
+                        if (cnt >= 3)
+                        {
+                            lucky2 = true;
+                        }
+                    }
+                   
+                }
+            }
+            if (lucky1 == true && lucky2 == true )
+            {
+                Console.WriteLine("This Is a Lucky Winner");
+            }
+            else
+            {
+                Console.WriteLine("This is Not Lucky Winner");
+            }
+
+Task1.4 q8
+char ch = char.Parse(Console.ReadLine());
+
+            int i = ch;//implicit casting
+            Console.WriteLine(i);
+            Console.ReadKey();  //to hold window
+
+task1.2 q9
+ int wer = int.Parse(Console.ReadLine());
+            char n = (char)wer;//explicit
+            Console.WriteLine(n);
+            Console.ReadKey();
+
+
+task1.4 q10
+a)
+            int i;
+            string n = Console.ReadLine();
+            char p = char.Parse(Console.ReadLine());
+            for (i = 0; i < n.Length; i++)
+            {
+                if (n[i] == p)
+                {
+                    Console.WriteLine(i+1);
+                }
+            }
+b)
+ int i;
+            string n = Console.ReadLine();
+            for (i = 0; i < 3; i++)
+            {
+                Console.Write(n[i]);
+            }
+
+c)
+
+ int i,f=0;
+            string n = Console.ReadLine();
+            for (i = n.Length-1; i >=f+2; i--)
+            {
+                Console.Write(n[i]);
+            }
+
+d)
+ int i,a;
+        String n = Console.ReadLine();
+
+        foreach(char c in n)
+        {
+             a = (int)c;
+            i = a + 32;
+            Console.Write((char)i);
+            }
+e)
+
+int i;
+        StringBuilder n = new StringBuilder("hello");
+       
+        char ch = char.Parse(Console.ReadLine());
+        char kh = char.Parse(Console.ReadLine());
+        for (i = 0; i < n.Length; i++)
+        {
+            if (n[i] == ch)
+            {
+                n[i] = kh;  
+            }
+            Console.Write(n[i]);
+        }
+
+f)
+
+int i;
+        string n = Console.ReadLine();
+        int p = int.Parse(Console.ReadLine());
+        for(i=0;i< p; i++)
+        {
+            Console.WriteLine(n);
+        }
+
+h)
+   int a;
+        string n = Console.ReadLine();
+        foreach(char c in n)
+        {
+            a = (int)c;
+            a = a - 32;
+            Console.Write((char)a);
+        }
+            
+
+i)
+
+
+        string n = Console.ReadLine();
+        string p = Console.ReadLine();
+        Console.WriteLine(n + p);
+
+
+
+task1.4 q11
+
+ int i;
+            int n = int.Parse(Console.ReadLine());
+            for (i = 1; i <= 10; i++)
+            {
+             
+                Console.WriteLine("{0}*{1}={2}",n,i,n*i);
+            }
+
+

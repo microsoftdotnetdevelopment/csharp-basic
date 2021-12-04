@@ -1,0 +1,1 @@
+representing important information or features to user and hiding complex information is abstraction.

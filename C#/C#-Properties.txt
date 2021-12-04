@@ -1,0 +1,55 @@
+-------------------------------------------------Properties Overwiew----------------------------------------------
+
+1.A property is a member that provides a flexible mechanism to read, write, or compute the value of a private field. Properties can be used as if they are public data members, but they are actually special methods called accessors.
+2.This enables data to be accessed easily and still helps promote the safety and flexibility of methods.
+3.Properties enable a class to expose a public way of getting and setting values, while hiding implementation or verification code
+4.A get property accessor is used to return the property value, and a set accessor is used to assign a new value. These accessors can have different access levels.
+5.The value keyword is used to define the value being assigned by the set accessor.
+6.Properties that do not implement a set accessor are read only.
+7. Properties are like smart fields.
+8. Properties can also be static. If a property is static, there are limitations on what the get and set methods can do.
+9.The type of a property can be a primitive type, a collection of primitive types, a user-defined type, or a collection of user-defined types.
+10.When the data type of a property is an enumeration, a development environment such as Microsoft Visual Studio will display the property as a drop-down list in the Properties window.
+11. If the data type of a property is a class that has properties, those properties are called subproperties of the defining property. 
+12.You should expose properties instead of public fields from your components, because properties can be versioned, they allow data hiding, and the accessor methods can execute additional logic.
+13.It is common to have properties that simply return immediately with the result of an expression. There is a syntax shortcut for defining these properties using =>: public string Name => First + " " + Last;    The property must be read only, and you do not use the get accessor keyword.
+14.Properties combine aspects of both fields and methods.
+15. A property without a set accessor is considered read-only. A property without a get accessor is considered write-only. A property that has both accessors is read-write
+16.Unlike fields, properties are not classified as variables. Therefore, you cannot pass a property as a ref or out parameter.
+17.Properties have many uses: they can validate data before allowing a change; they can transparently expose data on a class where that data is actually retrieved from some other source, such as a database; they can take an action when data is changed, such as raising an event, or changing the value of other fields.
+18.Properties can be marked as public, private, protected, internal, or protected internal
+19.A property may be marked as a virtual property by using the virtual keyword. This enables derived classes to override the property behavior by using the override keyword.
+20.A property overriding a virtual property can also be sealed, specifying that for derived classes it is no longer virtual. 
+21.a property can be declared abstract, This means that there is no implementation in the class, and derived classes must write their own implementation. 
+22.It is an error to use a virtual, abstract, or override modifier on an accessor of a static property.
+23.Properties can be declared on an interface. The following is an example of an interface indexer accessor: 
+	public interface ISampleInterface
+        {
+            // Property declaration:
+            string Name
+            {
+                get;
+                set;
+            }
+        }
+
+24.The get and set portions of a property or indexer are called accessors. By default these accessors have the same visibility, or access level: that of the property or indexer to which they belong.
+
+25.it is sometimes useful to restrict access to one of these accessors. Typically, this involves restricting the accessibility of the set accessor, while keeping the get accessor publicly accessible. For example:
+
+----------------------------------------------------Restrictions on Access Modifiers on Accessors
+
+Using the accessor modifiers on properties or indexers is subject to these conditions:
+You cannot use accessor modifiers on an interface or an explicit interface member implementation.
+You can use accessor modifiers only if the property or indexer has both set and get accessors. In this case, the modifier is permitted on one only of the two accessors.
+If the property or indexer has an override modifier, the accessor modifier must match the accessor of the overridden accessor, if any.
+The accessibility level on the accessor must be more restrictive than the accessibility level on the property or indexer itself.
+
+
+-----------------------------------------------------
+
+	
+
+
+
+

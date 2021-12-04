@@ -1,0 +1,344 @@
+C# is a general-purpose, object-oriented programming language.Its development team is led by Anders Hejlsberg.
+The most recent version is C# 7.0 which was released in 2017 along with Visual Studio 2017
+Purpose of Main() method - Main method is the entry point into your application.
+C# is case sensitive language. 
+-------------------------------------------
+using System;
+class Program
+{
+    static void Main()
+    {
+        // Prompt the user for his name
+        Console.WriteLine("Please enter your name");
+        // Read the name from console
+        string UserName = Console.ReadLine();
+        // Concatenate name with hello word and print
+        Console.WriteLine("Hello " + UserName);
+        //Placeholder syntax to print name with hello word 
+        //Console.WriteLine("Hello {0}", UserName);
+    }
+}
+--------------------------------------------------
+Datatypes in c#-
+1.Boolean type – Only true or false .
+2.Integral Types - sbyte, byte, short, ushort, int, uint, long, ulong, char
+3.Floating Types – float and double
+4.Decimal Types 
+5.String Type  
+-------------------------------------------------------
+Find range-
+Int i=0;
+Console.writeline(“Min={0}”,int.minvalue);
+Console.writeline(“Min={0}”,int.maxvalue);
+----------------------------------------------------
+Verbatim Literal-
+Verbatim Literal is a string with an @ symbol prefix, as in @“Hello”. Verbatim literals make escape sequences translate as normal printable characters to enhance readability. 
+Example: 
+Without Verbatim Literal : "C:\\Pragim\\DotNet\\Training\\Csharp"; // Less Readable
+With Verbatim Literal : @"C:\Pragim\DotNet\Training\Csharp"; // Better Readable
+----------------------------------------------------
+Operators in c#-
+Assignment Operator =
+Arithmetic Operators like +,-,*,/,% 
+Comparison Operators like ==, !=,>, >=, <, <= 
+Conditional Operators like &&, ||
+Ternary Operator ?:
+Unary operator-+, -, !, ~, ++, --,
+Null Coalescing Operator ??  
+-------------------------------------------------
+Value Types  - int, float, double, structs, enums etc
+Reference Types – Interface, Class, delegates, arrays etc
+By default value types are non nullable. To make them nullable use ?
+int i = 0 (i is non nullable, so "i" cannot be set to null, i = null will generate compiler error)
+int? j = 0 (j is nullable int, so j=null is legal)
+Nullable types bridge the differences between C# types and Database types.
+---------------------------------------
+Implicit conversion is done by the compiler:
+1. When there is no loss of information if the conversion is done
+2. If there is no possibility of throwing exceptions during the conversion
+Example: Converting an int to a float will not loose any data and no exception will be thrown, hence an implicit conversion can be done. 
+Where as when converting a float to an int, we loose the fractional part and also a possibility of overflow exception.
+ Hence, in this case an explicit conversion is required. For explicit conversion we can use cast operator or the convert class in c#.
+------------------------------------------------
+Difference between Parse and TryParse
+1. If the number is in a string format you have 2 options - Parse() and TryParse() 
+2. Parse() method throws an exception if it cannot parse the value, whereas TryParse() returns a bool indicating whether it succeeded or failed.
+3. Use Parse() if you are sure the value will be valid, otherwise use TryParse() 
+-------------------------------------------------------------
+Comments are used to document what the program does and what specific blocks or lines of code do. C# compiler ignores comments.
+Single line Comments                       -   //
+Multi line Comments                     -   /*  */
+XML Documentation Comments      -   ///
+--------------------------------------------------------
+In general classes, structs, enums, interfaces, delegates are called as types and fields, properties, constructors, methods etc., that normally reside in a type are called as type members.
+Type members can have all the access modifiers, where as types can have only 2 (internal, public) of the 5 access modifiers
+-----------------------------------------------------------------------------
+Jit Compiler-
+1.	The JIT compiler translates the MSIL code of an assembly to native code and uses the CPU architecture of the target machine to execute a .NET application.
+2.	It also stores the resulting native code so that it is accessible for subsequent calls.
+3.	If a code executing on a target machine calls a non-native method, the JIT compiler converts the MSIL of that method into native code.
+4.	The JIT compiler also enforces type-safety in the runtime environment of the .NET Framework.
+5.	It checks for the values that are passed to parameters of any method.
+--------------------------------------------------------------------------------------
+What is a .Net Assembly?
+The .NET assembly is the standard for components developed with the Microsoft.NET. Dot NET assemblies may or may not be executable, i.e., 
+they might exist as the executable (.exe) file or dynamic link library (DLL) file.
++All the .NET assemblies contain the definition of types, versioning information for the type, meta-data, and manifest. The designers of .NET have worked a lot on the component (assembly) resolution.
+There are two kind of assemblies in .NET;
+•	private 
+•	shared
+Private assemblies are simple and copied with each calling assemblies in the calling assemblies folder.
+Shared assemblies (also called strong named assemblies) are copied to a single location (usually the Global assembly cache).
+----------------------------------------------------------------------------------------------
+What is the base class of all classes in the .NET Framework?
+System.Object-it is base class
+Every Type inherits from Object Type, directly or indirectly, and therefore has access to its members.  
+Here’s a brief summary of all members of System.Object : 
+
+•	Object  constructor –  called when object is created, ultimately called for every object
+•	Equals(object) – compares object to specified object; true for reference types if parameter references the current object  [virtual]
+•	Equals(object,object) – static method to compare two objects
+•	Finalize – called when the object is being destroyed  [virtual]
+•	GetHashCode – is meant to provide a unique number used in hashing algorithms, but should be overridden so that value returned is unique based on object contents  [virtual]
+•	GetType – returns the Type of the object
+•	ReferenceEquals(object,object) – static method to see if two references refer to the same object
+•	ToString – returns a string that describes the object; by default, just returns 
+•	the type name
+--------------------------------------------------------------------------------------------------
+Using keyword-
+using System; using is the directive used to include the namespace in the program and System is the name of namespace.
+----------------------------------------------------------------------------
+Goto stmt-
+The goto statement is a jump statement that controls the execution of the program to another segment of the same program. You create label at anywhere in program then can pass the execution control via the goto statements.
+Example-
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+ 
+namespace goto_statements
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string name;
+ 
+        label: //creating label with colon(:)
+ 
+            Console.WriteLine("Enter your name: ");
+            name = Console.ReadLine();
+ 
+            Console.WriteLine("Welcome {0}", name);
+            Console.WriteLine("Press Ctrl + C for Exit\n");
+ 
+            goto label; //jump to label statement           
+        }
+    }
+}
+---------------------------------------------------------------------------------------------------
+Break stmt-
+When the break statement is encountered inside a loop, the loop is immediately terminated and program control resumes at the next statement 
+-------------------------------------------------------------------------------------------
+Continue stmt-
+A Continue statement jumps out of the current loop condition and jumps back to the starting of the loop code.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text; 
+ 
+namespace Hello
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+ 
+            int i;          
+          for (i = 0; i <= 10; i++)
+          { 
+              if (i == 5)                             
+                  continue;
+             
+              if (i == 8)              
+                  break; 
+              Console.WriteLine("value is"  +i);            
+          } 
+          Console.ReadLine();              
+        }    
+    }
+}
+--------------------------------------------------------------------------------------------------------
+Recursion-
+A recursive function is a function that calls itself.
+1.	using System;    
+2.	namespace InterviewQuestionPart4    
+3.	{    
+4.	    class Program    
+5.	    {    
+6.	        static void Main(string[] args)    
+7.	        {    
+8.	            Console.WriteLine("Please Enter a Number");    
+9.	    
+10.	            //read number from user    
+11.	            int number =Convert.ToInt32(Console.ReadLine());    
+12.	    
+13.	            //invoke the static method    
+14.	            double factorial = Factorial(number);    
+15.	    
+16.	            //print the factorial result    
+17.	            Console.WriteLine("factorial of"+number+"="+factorial.ToString());    
+18.	    
+19.	        }    
+20.	        public static double Factorial(int number)    
+21.	        {    
+22.	            if (number == 0)    
+23.	                return 1;    
+24.	    
+25.	            double factorial = 1;    
+26.	            for (int i = number; i >= 1;i-- )    
+27.	            {    
+28.	                factorial = factorial * i;    
+29.	            }    
+30.	            return factorial;    
+31.	        }    
+32.	    }    
+33.	}   
+----------------------------------------------------------------------------------------------
+Explain the Finalize() and Dispose() methods in Garbage Collection class?
+Dispose() is called when we want for an object to release any unmanaged resources with them. It belongs to IDisposable interface. 
+try
+{
+
+string constring = "Server=(local);Database=my; User Id=sa; Password=sa";
+SqlConnection sqlcon = new SqlConnection(constring);
+sqlcon.Open(); // here connection is open
+
+
+// some code here which will be execute
+}
+catch
+{
+// code will be execute when error occurred in try block
+}
+finally
+{
+sqlcon.Close(); // close the connection
+sqlcon.Dispose(); // detsroy the connection object
+}
+Finalize() is used for the same purpose but it doesn't assure the garbage collection of an object. It belongs to Object class
+class employee
+{
+//This is the destructor of emp class
+~employee()
+{
+
+}
+//This destructor is implicitly compiled to the Finalize method.
+}
+--------------------------------------------------------------------------------------------------------
+The basic difference between generic and non-generic collections:
+
+- Non-Generic collections - These are the collections that can hold elements of different data types. It holds all elements as object type.
+So it includes overhead of type conversions.
+
+- Generic collections - These are the collections that can hold data of same type and we can decide what type of data that collections can hold.
+
+Some advantages of generic collections - Type Safe, Secure, reduced overhead of type conversions.
+----------------------------------------------------------------------------------------------------------------
+
+OOPS FEATURES-
+Object Oriented Programming (OOP) is a programming model where programs are organized around objects and data rather than action and logic. 
+The software is divided into a number of small units called objects. The data and functions are built around these objects.
+The data of the objects can be accessed only by the functions associated with that object.
+The functions of one object can access the functions of another object.
+
+Class
+A class is the core of any modern Object Oriented Programming language such as C#.
+In OOP languages it is mandatory to create a class for representing data. 
+A class is a blueprint of an object that contains variables for storing data and functions to perform operations on the data. 
+A class will not occupy any memory space and hence it is only a logical representation of data.
+To create a class, you simply use the keyword "class" followed by the class name:
+Class is a reference type and its object is created on the heap memory.
+Class can inherit the another class.
+Class can have the all types of constructor and destructor.
+The member variable of class can be initialized directly.
+class object can not be created without using the new keyword, it means we have to use it.
+A class consists of data and behaviour. Its data is represented by fields and behaviour is represented by Methods.
+Demo obj=new Demo();
+class Employee
+{
+ 
+}
+ 
+Object
+Objects are the basic run-time entities of an object oriented system. They may represent a person, a place or any item that the program must handle. 
+"An object is a software bundle of related variable and methods."
+ "An object is an instance of a class"
+
+                  Compiler	                                            Interpreter
+1	Compiler Takes Entire program as input	                Interpreter Takes Single instruction as input .
+2	Intermediate Object Code is Generated	                No Intermediate Object Code is Generated
+3	Conditional Control Statements are Executes faster	Conditional Control Statements are Executes slower
+4	Memory Requirement : More (Since Object Code is Generated)	Memory Requirement is Less
+5	Program need not be compiled every time	                Every time higher level program is converted into lower level program
+6	Errors are displayed after entire program is checked	Errors are displayed for every instruction interpreted (if any)
+7	Example : C Compiler	                                   Example : BASIC
+
+Escape Sequences-
+These are basically the special characters or escape characters. 
+The backslash character (\) in a regular expression indicates that the character that follows it either is a special character or should be interpreted literally.
+
+Command-Line Arguments
+Main() method is where program starts execution. Main method doesn’t accept parameter from any method. It accept parameter through command line. 
+It is an array type parameter that can accept n number of parameter in runtime.
+The Main method can be declared with or without a string[] parameter that contains command-line arguments.
+Basically main method can have two Signatures.
+static void Main(string[] args)
+or 
+static int Main(string[] args)
+In which string[] args will store whatever we have passed through command line to our application. 0th element in args array will hold Application Name it Self.
+Suppose our application's name is printname.exe that prints the names on screen when passed by command line like below command in cmd.exe
+printname.exe kirtan suresh chirag 
+it will print 
+printname
+kirtan
+suresh
+chirag
+
+namespaces vs class-
+Namespace: A category or brand of cars. Note that the brand really doesn't have to dictate how the car is built. You can't say a Honda always have four doors,..
+A namespace is used to group classes into a logical set.Multiple classes can exist in the same namespace.
+Class: Blueprint for how to build a specific car.
+
+
+class Program
+{
+    static void Main(String[] args)
+    {
+        if (args.Length > 0)
+        {
+            Console.WriteLine("First Argument Is - " + args[0]); //PRINT FIRST ARGUMENT    
+        }
+        Console.Read();
+    }
+
+//Main(String[] args) method has String[] args in parenthesis. This implies - Main() method can accept array of arguments of type String.
+
+int a = 2;
+            int b = 3;
+            
+            int c = ++a + b++;
+          
+            int d = ++a - b-- + c++;
+           
+      
+            int e = ++c + d++ - a-- + b++;
+            Console.WriteLine(e);
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(c);
+            Console.WriteLine(d);
+
+
+

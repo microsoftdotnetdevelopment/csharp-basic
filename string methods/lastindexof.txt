@@ -1,0 +1,3 @@
+
+string n = “sunny”;
+Console.WriteLine(n.LastIndexOf(‘y’));

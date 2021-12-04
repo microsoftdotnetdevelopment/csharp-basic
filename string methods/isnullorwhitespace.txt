@@ -1,0 +1,2 @@
+string n = ” “;
+Console.WriteLine(string.IsNullOrWhiteSpace(n));

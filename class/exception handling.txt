@@ -1,0 +1,108 @@
+Exception Handling
+An exception is an unforeseen error that occurs when a program is running. 
+Trying to read from a file that does not exist, throws FileNotFoundException.
+Trying to read from a database table that does not exist, throws a SqlException.
+Showing actual unhandled exceptions to the end user is bad for two reasons
+1. Users will be annoyed as they are cryptic and does not make much sense to the end users.
+2. Exceptions contain information, that can be used for hacking into your application
+An exception is actually a class that derives from System.Exception class. 
+The System.Exception class has several useful properties, that provide valuable information about the exception.
+Message: Gets a message that describes the current exception
+Stack Trace: Provides the call stack to the line number in the method where the exception occurred.
+
+We use try, catch and finally blocks for exception handling.
+try - The code that can possibly cause an exception will be in the try block.
+catch - Handles the exception.
+finally - Clean and free resources that the class was holding onto during the program execution.
+
+Specific exceptions will be caught before the base general exception, so specific exception blocks should always be on top of the base exception block. 
+Otherwise, you will encounter a compiler error.
+Note: It is a good practice to always release resources in the finally block, because finally block is guarenteed to execute,
+ irrespective of whether there is an exception or not.
+The InnerException property returns the Exception instance that caused the current exception.
+To look at the inner exception, you have to make this program cuase an exception fail. To do that you have 3 options
+1. Enter a Character instead of a number (Causes Format Exception)
+2. Or Enter a very big number that an interger cannot hold (Causes Over Flow Exception)
+3. Or Enter Zero for Second Number (Causes Divide By Zero Exception
+When do you usually go for creating your own custom exceptions?
+If none of the already existing dotnet exceptions adequately describes the problem. 
+
+Consider that
+1. I have an asp.net web application.
+2. The application should allow the user to have only one logged in session.
+3. If the user is already logged in, and if he opens another browser window and tries to login again, the application should throw an error stating he is already logged in another browser window.
+With in the .NET framework we donot have any exception, that adequately describes this problem. So this scenario is one of the examples where you want to create a custom exception.
+We know that an exception is a class. So to create a Custom exception, 
+
+Exceptions are unforeseen errors that occur when a program is running. 
+For example, when an application is executing a query, the database connection is lost. Exception handling is generally used to handle these scenarios. 
+But many a times I have seen programmers using exception handling to implement programming logic which is bad, and this is called as exception handling abuse.
+Program using exception handling to implement logical flow:
+using System;
+public class ExceptionHandlingAbuse
+{
+    public static void Main()
+    {
+        try
+        {
+            Console.WriteLine("Please enter Numerator");
+            int Numerator = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine("Please enter Denominator");
+            //Convert.ToInt32() can throw FormatException, if the entered value
+            //cannot be converted to integer. So use int.TryParse() instead
+            int Denominator = Convert.ToInt32(Console.ReadLine());
+
+
+            int Result = Numerator / Denominator;
+
+
+            Console.WriteLine("Result = {0}", Result);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Only numbers are allowed!");
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Only numbers between {0} & {1} are allowed",
+                Int32.MinValue, Int32.MaxValue);
+
+
+        }
+        catch (DivideByZeroException)
+        {
+            Console.WriteLine("Denominator cannot be zero");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+}
+Ex:2-
+int[] numbers = new int[2];
+try
+{
+    numbers[0] = 23;
+    numbers[1] = 32;
+    numbers[2] = 42;
+
+    foreach(int i in numbers)
+        Console.WriteLine(i);
+}
+catch(IndexOutOfRangeException ex)
+{
+    Console.WriteLine("An index was out of range!");
+}
+catch(Exception ex)
+{
+    Console.WriteLine("Some sort of error occured: " + ex.Message);
+}
+finally
+{
+    Console.WriteLine("It's the end of our try block. Time to clean up!");
+}
+Console.ReadLine();
+

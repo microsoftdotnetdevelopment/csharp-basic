@@ -1,0 +1,31 @@
+It returns a object
+
+string state = “southindia”;
+object ob1 = state.Clone();
+Console.WriteLine(ob1);
+
+string state = “southindia”;
+string st = “”;
+st = (string)state.Clone();
+Console.WriteLine(st);
+
+string state = “southindia”;
+string st = null;
+st = (string)state.Clone();
+Console.WriteLine(st);
+
+string country = “southindia”;
+object ob1 = country.Clone();
+Console.WriteLine(object.ReferenceEquals(country, ob1));
+
+Means it has two copies but both copies have same address
+
+string name = "sunny";
+        string b = null;
+        b = (string)name.Clone();
+        Console.WriteLine(b);
+
+ string str = "Clone() Test";   
+ string clonedString = null;  
+ clonedString = (String)str.Clone();  
+ Console.WriteLine (clonedString); 

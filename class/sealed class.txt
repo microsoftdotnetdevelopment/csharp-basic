@@ -1,0 +1,34 @@
+Sealed classes are used to restrict the inheritance feature of object oriented programming. Once a class is defined as a sealed class, the class cannot be inherited. 
+A sealed class cannot also be an abstract class. Because abstract class has to provide functionality and here we are restricting it to inherit.
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+ 
+namespace sealed_class
+{
+    class Program
+    {
+        public sealed class BaseClass
+        {
+            public void Display()
+        {
+            Console.WriteLine("This is a sealed class which can;t be further inherited");
+        }
+    }
+ 
+        public class Derived : BaseClass
+        {
+            // this Derived class can;t inherit BaseClass because it is sealed
+        }
+   
+        static void Main(string[] args)
+        {
+            BaseClass obj = new BaseClass();
+ 
+            obj.Display();
+ 
+            Console.ReadLine();
+        }
+    }
+}
