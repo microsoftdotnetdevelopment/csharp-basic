@@ -1,3 +1,0 @@
-
-char ch = ‘s’;
-Console.WriteLine(ch.ToString());

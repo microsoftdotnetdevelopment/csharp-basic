@@ -1,8 +1,0 @@
-string n = “sunny”;
-bool b = n.StartsWith(“s”);
-Console.WriteLine(b);
-
-  string name = "sunny";
-        bool b = false;
-        b = name.StartsWith("s");
-        Console.WriteLine(b);

@@ -1,5 +1,0 @@
-string n = ” sunny”;
-Console.WriteLine(n.Trim());
-
-tring n = “.. sunny df” ;
-Console.WriteLine(n.Trim(‘.’,’ ‘));
