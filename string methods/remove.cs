@@ -2,6 +2,6 @@ using System;
 
 static void Sample()
 {
-    string n = “sunny”;
+    string n = "tests";
     Console.WriteLine(n.Remove(1, 4));
 }

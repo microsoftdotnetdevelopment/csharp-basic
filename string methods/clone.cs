@@ -22,7 +22,7 @@ static void Sample()
 
     // Means it has two copies but both copies have same address
 
-    string name = "sunny";
+    string name = "tests";
     string b = null;
     b = (string)name.Clone();
     Console.WriteLine(b);

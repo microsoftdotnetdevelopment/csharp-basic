@@ -1,8 +1,8 @@
-// The string.Intern method optimizes string memory and performance. It allows you to put strings in the runtime’s shared string pool.
+// The string.Intern method optimizes string memory and performance. It allows you to put strings in the runtimeï¿½s shared string pool.
 using System;
 
 static void Sample()
 {
-    string n = “sunny”;
+    string n = 'tests';
     Console.WriteLine(string.Intern(n));
 }

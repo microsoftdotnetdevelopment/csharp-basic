@@ -14,7 +14,7 @@ static void Sample()
 // HELLO, WELCOME TO C#
 // Hello, Welcome to C# 5
 // Ex:2-
-// string s = “sunny”;
+// string s = 'tests'
 // Console.WriteLine(s.ToUpper());
 
 

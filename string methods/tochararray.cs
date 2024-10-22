@@ -2,10 +2,10 @@ using System;
 
 static void Sample()
 {
-    string n = “sunny”;
+    string n = "tests";
     Console.WriteLine(n.ToCharArray());
 
-    string name = "sunny";
+    string name = "tests";
     char[] b = new char[1];
     b = name.ToCharArray();
     Console.WriteLine(b);

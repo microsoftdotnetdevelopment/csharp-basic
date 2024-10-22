@@ -2,6 +2,6 @@ using System;
 
 static void Sample()
 {
-    string s = “SUNNY”;
+    string s = 'tests';
     Console.WriteLine(s.ToLower());
 }

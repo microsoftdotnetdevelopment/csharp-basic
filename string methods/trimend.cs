@@ -2,6 +2,6 @@ using System;
 
 static void Sample()
 {
-    string n = "    sunny df    ";
+    string n = "    tests df    ";
     Console.WriteLine(n.TrimEnd());
 }

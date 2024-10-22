@@ -2,6 +2,6 @@ using System;
 
 static void Sample()
 {
-    string n = “sunny”;
-    Console.WriteLine(n.LastIndexOf(‘y’));
+    string n = "tests";
+    Console.WriteLine(n.LastIndexOf(ï¿½yï¿½));
 }

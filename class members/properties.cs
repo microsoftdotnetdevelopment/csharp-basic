@@ -90,7 +90,7 @@ class programmer1
 	public static void Main1(string[] args)
 	{
 		employee1 e = new employee1();
-		e.setemployee(2, "sunny");
+		e.setemployee(2, "tests");
 		Console.WriteLine(e.getemployee);//read only value
 	}
 }

@@ -2,8 +2,8 @@ using System;
 
 static void Sample()
 {
-    string n = "sunny";
-    string p = "sunny";
+    string n = "tests";
+    string p = "tests";
     bool b = n.Equals(p);
     Console.WriteLine(b);
 
