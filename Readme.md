@@ -20,14 +20,15 @@ I'm Sam, and I'm passionate about product engineering and web development. I cre
 
 
 ### About the app
-Simple WorldMap app to find countries. 
+csharp programs includes
+using
+namespace
+class
+properties
+methods
 
 ### useful commands to run project
-- npm run start
-dotnet build will build using a solution file if one is present (the *.sln file).
-
-dotnet run however requires a project file (*.csproj).
-
+http://localhost:5262/
 
 ## Subscribe and Stay Updated!
 
