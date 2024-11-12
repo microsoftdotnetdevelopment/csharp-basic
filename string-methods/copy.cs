@@ -1,6 +1,6 @@
 using System;
 
-static void Sample()
+static void SampleCopy()
 {
     string country = "southindia";
     string cou = "india";
