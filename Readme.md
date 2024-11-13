@@ -28,7 +28,8 @@ properties
 methods
 
 ### useful commands to run project
-http://localhost:5262/
+>dotnet run  console app
+http://localhost:5262/ webapplication1
 
 ## Subscribe and Stay Updated!
 
